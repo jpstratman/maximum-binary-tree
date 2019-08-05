@@ -11,8 +11,9 @@
  */
 var constructMaximumBinaryTree = function(nums) {
     let tree = new TreeNode(nums[0]);
+    let i, currentValue, newNode, parentNode, nextNode;
     
-    for (let i = 1, l = nums.length; i < l; i++) {
+    for (i = 1, l = nums.length; i < l; i++) {
         currentValue = nums[i];
         newNode = new TreeNode(currentValue)
         
@@ -27,8 +28,8 @@ var constructMaximumBinaryTree = function(nums) {
             continue;
         }
         
-        let parentNode = tree;
-        let nextNode = tree.right;
+        parentNode = tree;
+        nextNode = tree.right;
         
         do {
             if (!nextNode) {
